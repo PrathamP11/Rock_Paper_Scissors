@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- SHARED HEADER -->
+        <div id="hdr">
+            <div class="game-title">Rock<br>Paper<br>Scissors</div>
+            <div class="score-card">
+                <div class="score-label">Computer<br>Score</div>
+                <div class="score-val" id="sc-pc">0</div>
+            </div>
+            <div class="score-card">
+                <div class="score-label">Your<br>Score</div>
+                <div class="score-val" id="sc-p">0</div>
+            </div>
+        </div>
+
+        <!-- SCREEN 1: SELECTION -->
+        <div class="screen show" id="screen-select">
+            <div class="triangle-wrap">
+                <svg viewBox="0 0 360 310" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="110" y1="70" x2="250" y2="70" stroke="#3a5a2a" stroke-width="10" stroke-linecap="round" />
+                    <line x1="110" y1="70" x2="180" y2="240" stroke="#3a5a2a" stroke-width="10" stroke-linecap="round" />
+                    <line x1="250" y1="70" x2="180" y2="240" stroke="#3a5a2a" stroke-width="10" stroke-linecap="round" />
+                </svg>
+                <div class="node node-rock" id="btn-rock" onclick="choose('rock')">✊</div>
+                <div class="node node-scissors" id="btn-scissors" onclick="choose('scissors')">✌️</div>
+                <div class="node node-paper" id="btn-paper" onclick="choose('paper')">✋</div>
+            </div>
+        </div>
+
+        <!-- SCREEN 2: RESULT -->
+        <div class="screen" id="screen-result">
+            <div class="battle-row">
+
+                <div class="side">
+                    <div class="side-lbl">You Picked</div>
+                    <div class="icon-wrap">
+                        <div class="ripple r1" id="pr1"></div>
+                        <div class="ripple r2" id="pr2"></div>
+                        <div class="ripple r3" id="pr3"></div>
+                        <div class="icon-circle" id="p-ic">✊</div>
+                    </div>
+                </div>
+
+                <div class="mid-msg">
+                    <div class="res-headline" id="r-head">TIE UP</div>
+                    <div class="res-sub" id="r-sub"></div>
+                    <button class="white-btn" id="pab" onclick="goSelect()">PLAY AGAIN</button>
+                </div>
+
+                <div class="side">
+                    <div class="side-lbl">PC Picked</div>
+                    <div class="icon-wrap">
+                        <div class="ripple r1" id="cr1"></div>
+                        <div class="ripple r2" id="cr2"></div>
+                        <div class="ripple r3" id="cr3"></div>
+                        <div class="icon-circle" id="c-ic">✊</div>
+                    </div>
+                </div>
+
+            </div>
+            <button id="next-btn" onclick="goHurray()" style="display:none;">NEXT</button>
+        </div>
+
+        <!-- SCREEN 3: HURRAY -->
+        <div class="screen" id="screen-hurray">
+            <div class="hurray-trophy">🏆</div>
+            <div class="hurray-title">HURRAY!!</div>
+            <div class="hurray-sub">YOU WON THE GAME</div>
+            <button class="white-btn" onclick="goSelect()" style="margin-top:18px; position:relative; z-index:5;">PLAY
+                AGAIN</button>
+        </div>
+
+        <!-- RULES BUTTON (always on top) -->
+        <button id="rules-btn" onclick="toggleRules()">RULES</button>
+
+        <!-- RULES OVERLAY -->
+        <div id="rules-overlay">
+            <div class="rules-backdrop" onclick="closeRules()"></div>
+            <div class="rules-card">
+                <button class="close-x" onclick="closeRules()">✕</button>
+                <h3>Game Rules</h3>
+                <ul>
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you'll count off "rock, paper, scissors, shoot" or just "rock,
+                        paper, scissors."</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div><!-- /#app -->
+
+    <script src="index.js"></script>
+</body>
+
+</html>
