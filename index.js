@@ -1,7 +1,7 @@
 const ICONS = {
-  rock:     '<img src="/fist.png" class="hand-img" alt="rock">',
-  paper:    '<img src="/hand.png" class="hand-img" alt="paper">',
-  scissors: '<img src="/peace.png" class="hand-img" alt="scissors">'
+  rock:     '<img src="./hand.png" class="hand-img" alt="rock">',
+  paper:    '<img src="./hand.png" class="hand-img" alt="paper">',
+  scissors: '<img src="./peace.png" class="hand-img" alt="scissors">'
 };
 const CHOICES = ['rock', 'paper', 'scissors'];
 
@@ -80,7 +80,7 @@ function showResult(pick, cpick, outcome) {
     sub.textContent = 'AGAINST PC';
     pab.textContent = 'PLAY AGAIN';
     nxt.style.display = 'block';
-    document.getElementById('rules-btn').style.right = '130px';
+    document.getElementById('rules-btn').style.right = '145px';
 
   } else {
     cEl.style.borderColor = '#c040d8';

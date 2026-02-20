@@ -20,39 +20,38 @@ body {
 /* GAME WRAPPER */
 #app {
     width: 100%;
-    max-height: 100vh;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     background: #8CC461;
-    border: 5px solid #111;
     position: relative;
     overflow: hidden;
-    border-radius: 4px;
 }
 
 /* HEADER */
 #hdr {
     position: absolute;
-    top: 48px;
+    top: 8%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: stretch;
     gap: 8px;
     border: 2.5px solid rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 14px 16px;
     background: rgba(255, 255, 255, 0.08);
-    width: 680px;
+    width: 100%;
+    max-width:800px;
     z-index: 10;
 }
 
 .game-title {
     color: #fff;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1.15;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     flex: 1;
 }
 
@@ -60,13 +59,22 @@ body {
     background: #fff;
     border-radius: 8px;
     text-align: center;
-    padding: 8px 20px;
-    min-width: 120px;
+    padding: 8px 24px;
 }
 
 .score-label {
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #656565;
+    line-height: 1.3;
+}
+
+.score-label2 {
+    font-size: 18px;
     font-weight: 700;
+    padding-inline: 20px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     color: #656565;
@@ -74,11 +82,11 @@ body {
 }
 
 .score-val {
-    font-size: 46px;
+    font-size: 70px;
     font-weight: 900;
     color: #111;
     line-height: 1;
-    margin-top: 12px;
+    margin-top: 4px;
 }
 
 /* RULES BTN */
@@ -90,7 +98,7 @@ body {
     border: 2px solid #fff;
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 2px;
     padding: 8px 22px;
@@ -135,9 +143,10 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -25%);
-    width: 360px;
-    height: 310px;
+    transform: translate(-50%, -15%);
+    width: min(420px, 90vw);
+    height: min(360px, 75vw);
+    aspect-ratio: 360 / 310;
 }
 
 .triangle-wrap svg {
@@ -150,17 +159,17 @@ body {
 }
 
 .node {
-    margin-top: 20px;
+    margin-top: 10px;
     position: absolute;
-    width: 125px;
-    height: 125px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border: 12px solid;
+    border: 16px solid;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     z-index: 5;
     transition: transform 0.15s ease;
@@ -228,7 +237,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 820px;
+    width: 90%;
+    max-width: 650px;
 }
 
 .side {
@@ -248,21 +258,21 @@ body {
 
 .icon-wrap {
     position: relative;
-    width: 330px;
+    width: min(330px, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .icon-circle {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 12px solid #3b8fd4;
+    border: 16px solid #3b8fd4;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 2;
@@ -333,7 +343,7 @@ body {
 
 .res-headline {
     color: #fff;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -343,7 +353,7 @@ body {
 
 .res-sub {
     color: #fff;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -355,10 +365,10 @@ body {
     background: #fff;
     border: none;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
-    padding: 12px 32px;
+    padding: 14px 32px;
     border-radius: 8px;
     cursor: pointer;
     color: #6B6B6B;
@@ -377,7 +387,7 @@ body {
     border: 2px solid #fff;
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 2px;
     padding: 8px 22px;
@@ -391,7 +401,7 @@ body {
 
 /* HURRAY SCREEN */
 .hurray-trophy-wrap {
-    margin-top: 100px;
+    margin-top: 20px;
     position: relative;
     z-index: 2;
     display: flex;
@@ -401,7 +411,7 @@ body {
 
 .hurray-stars-img {
     position: absolute;
-    width: 400px;
+    width: 505px;
     height: auto;
     top: 25%;
     left: 50%;
@@ -410,7 +420,7 @@ body {
 }
 
 .hurray-trophy-img {
-    width: 160px;
+    width: 200px;
     height: auto;
     position: relative;
     z-index: 2;
@@ -419,7 +429,7 @@ body {
 .hurray-title {
     margin-top: 15px;
     color: #fff;
-    font-size: 75px;
+    font-size: 90px;
     font-weight: 500;
     letter-spacing: 10%;
     position: relative;
@@ -428,12 +438,22 @@ body {
 
 .hurray-sub {
     color: #fff;
-    font-size: 34px;
+    font-size: 40px;
     font-weight: 500;
     letter-spacing: 10%;
     position: relative;
     z-index: 2;
     margin-bottom: 15px;
+}
+
+/* Place the PLAY AGAIN button at the bottom center of the hurray screen */
+#screen-hurray .white-btn {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    margin-bottom: 35px;
 }
 
 /* RULES POPUP */
@@ -457,19 +477,19 @@ body {
 .rules-card {
     position: absolute;
     bottom: 65px;
-    right: 18px;
+    right: 25px;
     background: #004429;
     border-radius: 12px;
-    border: 4px solid #fff;
+    border: 6px solid #fff;
     padding: 26px 24px 24px;
-    width: 285px;
+    width: 310px;
     color: #fff;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 .rules-card h3 {
-    font-size: 19px;
-    font-weight: 900;
+    font-size: 28px;
+    font-weight: 500;
     margin-bottom: 16px;
     text-align: center;
 }
@@ -482,8 +502,7 @@ body {
 }
 
 .rules-card li {
-    font-size: 12.5px;
-    font-weight: 700;
+    font-size: 14px;
     line-height: 1.45;
     display: flex;
     gap: 8px;
@@ -498,12 +517,12 @@ body {
 
 .close-x {
     position: absolute;
-    top: -14px;
-    right: -14px;
-    width: 45px;
-    height: 45px;
+    top: -18px;
+    right: -18px;
+    width: 55px;
+    height: 55px;
     background: #e03030;
-    border: 4px solid #fff;
+    border: 6px solid #fff;
     border-radius: 50%;
     color: #fff;
     font-size: 15px;
