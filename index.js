@@ -1,5 +1,5 @@
 const ICONS = {
-  rock:     '<img src="./hand.png" class="hand-img" alt="rock">',
+  rock:     '<img src="./fist.png" class="hand-img" alt="rock">',
   paper:    '<img src="./hand.png" class="hand-img" alt="paper">',
   scissors: '<img src="./peace.png" class="hand-img" alt="scissors">'
 };
