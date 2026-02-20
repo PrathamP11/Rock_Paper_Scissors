@@ -1,4 +1,8 @@
-const ICONS = { rock: '✊', paper: '✋', scissors: '✌️' };
+const ICONS = {
+  rock:     '<img src="/fist.png" class="hand-img" alt="rock">',
+  paper:    '<img src="/hand.png" class="hand-img" alt="paper">',
+  scissors: '<img src="/peace.png" class="hand-img" alt="scissors">'
+};
 const CHOICES = ['rock', 'paper', 'scissors'];
 
 // Load persisted scores
@@ -42,8 +46,8 @@ function choose(pick) {
 
 function showResult(pick, cpick, outcome) {
   // Set emoji icons
-  document.getElementById('p-ic').textContent = ICONS[pick];
-  document.getElementById('c-ic').textContent = ICONS[cpick];
+  document.getElementById('p-ic').innerHTML = ICONS[pick];
+  document.getElementById('c-ic').innerHTML = ICONS[cpick];
 
   // Clear all ripple animations
   ['pr1', 'pr2', 'pr3', 'cr1', 'cr2', 'cr3'].forEach(function (id) {
@@ -64,6 +68,7 @@ function showResult(pick, cpick, outcome) {
     sub.textContent = '';
     pab.textContent = 'REPLAY';
     nxt.style.display = 'none';
+    document.getElementById('rules-btn').style.right = '22px';
 
   } else if (outcome === 'player') {
     pEl.style.borderColor = '#c040d8'; // winner = purple
@@ -75,6 +80,7 @@ function showResult(pick, cpick, outcome) {
     sub.textContent = 'AGAINST PC';
     pab.textContent = 'PLAY AGAIN';
     nxt.style.display = 'block';
+    document.getElementById('rules-btn').style.right = '130px';
 
   } else {
     cEl.style.borderColor = '#c040d8';
@@ -86,40 +92,20 @@ function showResult(pick, cpick, outcome) {
     sub.textContent = 'AGAINST PC';
     pab.textContent = 'PLAY AGAIN';
     nxt.style.display = 'none';
+    document.getElementById('rules-btn').style.right = '22px';
   }
 
   showScreen('screen-result');
 }
 
 function goSelect() {
+  document.getElementById('rules-btn').style.right = '22px';
   showScreen('screen-select');
 }
 
 function goHurray() {
+  document.getElementById('rules-btn').style.right = '22px';
   showScreen('screen-hurray');
-  spawnStars();
-}
-
-function spawnStars() {
-  // Remove old stars
-  document.querySelectorAll('.hstar').forEach(function (s) { s.remove(); });
-
-  var positions = [
-    { top: '10%', left: '18%' }, { top: '6%', left: '35%' }, { top: '4%', left: '55%' },
-    { top: '10%', left: '72%' }, { top: '28%', left: '83%' }, { top: '55%', left: '80%' },
-    { top: '62%', left: '12%' }, { top: '35%', left: '6%' }, { top: '48%', left: '44%' }
-  ];
-
-  var container = document.getElementById('screen-hurray');
-  positions.forEach(function (p, i) {
-    var s = document.createElement('div');
-    s.className = 'hstar';
-    s.textContent = '★';
-    s.style.top = p.top;
-    s.style.left = p.left;
-    s.style.animationDelay = (i * 0.08) + 's';
-    container.appendChild(s);
-  });
 }
 
 // ── Screen switching ──
